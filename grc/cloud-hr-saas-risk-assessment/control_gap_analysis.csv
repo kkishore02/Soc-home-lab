@@ -1,0 +1,8 @@
+control_area,current_state,gap,recommendation,priority
+Identity and Access Management,Password-based admin access,MFA not enforced,Require MFA for privileged and remote access,Critical
+Access Control,Manual broad permissions,Least privilege not consistently applied,Implement RBAC and scheduled access review,High
+Supplier Assurance,Basic commercial review,Security evidence incomplete,Request certifications pen-test summary and security questionnaire,High
+Cloud Security,Default configuration baseline,Configuration review not formalised,Create and review hardened baseline,High
+Incident Response,Internal IR plan,Supplier roles unclear,Add supplier escalation contacts notification timelines and tabletop exercise,High
+Business Continuity,General backup assumptions,RTO/RPO not confirmed,Document recovery objectives and data-export process,Medium
+Privacy,HR data processing defined,DPIA trigger not formally screened,Complete DPIA screening and data-flow review,Medium
