@@ -65,6 +65,26 @@ Investigated a synthetic Microsoft 365 credential-phishing email.
 
 ➡️ [View the phishing investigation](./investigations/phishing-email/)
 
+### 3. Wireshark Network Traffic Investigation ✅
+Investigated synthetic DNS, TCP and HTTP traffic to identify suspicious periodic outbound communication.
+
+**Key evidence**
+- Suspicious DNS lookup from an internal workstation
+- External destination contacted over HTTP
+- Repeated check-ins at approximately 60-second intervals
+- IOC extraction for host, domain, IP and URI
+- Wireshark display filters documented
+- MITRE ATT&CK: TA0011 Command and Control and T1071.001 Web Protocols
+
+**Artifacts**
+- Synthetic network traffic evidence
+- Wireshark display filters
+- IOC JSON
+- Analysis summary
+- Full SOC-style incident report
+
+➡️ [View the network traffic investigation](./investigations/network-traffic/)
+
 ## Planned Lab Scenarios
 
 ### Suspicious PowerShell Activity
@@ -86,7 +106,8 @@ soc-home-lab/
 ├── queries/
 └── investigations/
     ├── brute-force/
-    └── phishing-email/
+    ├── phishing-email/
+    └── network-traffic/
 ```
 
 ## Current Status
@@ -94,6 +115,7 @@ soc-home-lab/
 - [x] Project structure created
 - [x] Brute-force investigation completed
 - [x] Phishing email investigation completed
+- [x] Wireshark network traffic investigation completed
 - [x] Sentinel KQL added
 - [x] Splunk SPL added
 - [x] Incident reports added
@@ -101,7 +123,7 @@ soc-home-lab/
 - [ ] Windows VM telemetry project
 - [ ] Sysmon investigation
 - [ ] PowerShell investigation
-- [ ] Network investigation
+- [x] Network investigation
 - [ ] Screenshots from a live SIEM lab
 
 ## Portfolio Integrity
