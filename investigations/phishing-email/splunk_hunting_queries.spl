@@ -1,0 +1,12 @@
+# Hunt for the suspicious sender domain
+index=email sender_domain="micros0ft-support.example"
+| table _time sender recipient subject action
+
+# Hunt for the phishing URL
+index=proxy OR index=email "login-microsoft365-security.example"
+| table _time user src url action
+
+# Password-expiration theme from non-approved domains
+index=email subject="*Password Expiration*"
+| where NOT like(sender_domain,"%microsoft.com")
+| table _time sender recipient subject sender_domain
