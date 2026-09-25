@@ -1,74 +1,54 @@
 # SOC Home Lab
 
-A hands-on blue-team cybersecurity lab for practising security monitoring, log analysis, threat detection and incident investigation.
+A hands-on blue-team cybersecurity portfolio lab focused on security monitoring, Windows authentication analysis, SIEM queries, alert triage and incident investigation.
 
 ## Goal
 
-Build a small SOC environment that demonstrates practical analyst skills using Windows telemetry, Sysmon and a SIEM platform such as Wazuh or Splunk.
-
-## Planned Architecture
-
-```text
-Windows 11 VM
-    |
-    v
-Sysmon + Windows Event Logs
-    |
-    v
-Wazuh / Splunk
-    |
-    v
-Detection Rules & Alerts
-    |
-    v
-Investigation
-    |
-    v
-MITRE ATT&CK Mapping
-```
+Build practical SOC analyst evidence using synthetic and lab-generated telemetry, then document each investigation clearly enough to explain in a technical interview.
 
 ## Skills Demonstrated
 
 - Windows Event Log analysis
-- Sysmon telemetry
-- SIEM monitoring
-- Alert triage
-- Detection engineering
-- Threat hunting
+- SIEM monitoring and investigation
+- Microsoft Sentinel KQL
+- Splunk SPL
+- Alert triage and event correlation
 - Incident investigation
 - MITRE ATT&CK mapping
-- Security documentation
+- Containment and remediation planning
+- Technical security documentation
 
-## Lab Scenarios
+## Completed Investigation
 
-### 1. Failed Login Detection
-Detect repeated failed logins and investigate the source.
+### Brute-Force Login Investigation ✅
+Investigated a simulated RDP brute-force sequence using synthetic Windows authentication logs.
 
-### 2. Suspicious PowerShell Activity
-Monitor PowerShell process creation and command-line activity.
+**Key evidence**
+- 155 failed Event ID 4625 logons against an administrator account
+- Successful Event ID 4624 from the same source
+- Event ID 4672 immediately afterwards, indicating privileged context
+- Logon Type 10 (RemoteInteractive)
+- MITRE ATT&CK: T1110 Brute Force and T1078 Valid Accounts
 
-### 3. New Process Execution
-Analyse Sysmon process creation events and identify unusual parent/child relationships.
+**Artifacts**
+- Sentinel KQL detection queries
+- Splunk SPL searches
+- SOC incident report
+- Analysis summary
+- Sample authentication evidence
 
-### 4. Brute-Force Behaviour
-Identify repeated authentication failures followed by a successful login.
+➡️ [View the investigation](./investigations/brute-force/)
 
-### 5. Network Investigation
-Review suspicious connections and correlate activity with endpoint telemetry.
+## Planned Lab Scenarios
 
-## Evidence to Capture
+### Suspicious PowerShell Activity
+Monitor process creation and command-line activity for suspicious PowerShell usage.
 
-For every scenario, document:
+### New Process Execution
+Analyse Sysmon process-creation events and unusual parent/child relationships.
 
-1. What activity was generated
-2. Which logs captured it
-3. Relevant Event IDs
-4. SIEM query/search used
-5. Screenshot of the alert or event
-6. Investigation notes
-7. MITRE ATT&CK technique
-8. Analyst conclusion
-9. Recommended remediation
+### Network Investigation
+Review suspicious connections and correlate endpoint and network telemetry.
 
 ## Repository Structure
 
@@ -76,28 +56,39 @@ For every scenario, document:
 soc-home-lab/
 ├── README.md
 ├── docs/
-│   ├── lab-setup.md
-│   └── investigation-template.md
 ├── detections/
-│   └── detection-notes.md
-├── screenshots/
-└── queries/
-    └── queries.md
+├── queries/
+└── investigations/
+    └── brute-force/
+        ├── README.md
+        ├── incident_report.md
+        ├── sentinel_queries.kql
+        ├── splunk_queries.spl
+        ├── analysis_summary.json
+        ├── sample_authentication_events.csv
+        └── PUBLISH_CHECKLIST.md
 ```
 
 ## Current Status
 
 - [x] Project structure created
-- [ ] Windows VM prepared
-- [ ] Sysmon installed
-- [ ] SIEM installed/configured
-- [ ] Endpoint connected to SIEM
-- [ ] Failed-login scenario completed
-- [ ] PowerShell scenario completed
-- [ ] Investigation reports added
-- [ ] Screenshots added
+- [x] Brute-force investigation completed
+- [x] Sentinel KQL added
+- [x] Splunk SPL added
+- [x] Incident report added
+- [x] MITRE ATT&CK mapping added
+- [ ] Windows VM telemetry project
+- [ ] Sysmon investigation
+- [ ] PowerShell investigation
+- [ ] Network investigation
+- [ ] Screenshots from a live SIEM lab
+
+## Portfolio Integrity
+
+The completed brute-force investigation currently uses **synthetic data**. It demonstrates analysis and detection logic and is not presented as commercial SOC experience.
 
 ## Author
 
 **Kishore Bandi**  
-Cybersecurity MSc Graduate | Aspiring SOC Analyst
+MSc Cyber Security & Penetration Testing | BTech Computer Science Engineering  
+Target roles: Junior SOC Analyst • Cyber Security Analyst • Security Operations • Junior Security Engineer
