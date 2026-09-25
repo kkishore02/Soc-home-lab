@@ -1,0 +1,11 @@
+{
+  "sender_domain": "micros0ft-support.example",
+  "reply_to_domain": "account-verification.example",
+  "source_ip": "203.0.113.77",
+  "url": "https://login-microsoft365-security.example/reset",
+  "url_domain": "login-microsoft365-security.example",
+  "subject": "URGENT: Password Expiration - Action Required",
+  "spf": "fail",
+  "dkim": "none",
+  "dmarc": "fail"
+}
