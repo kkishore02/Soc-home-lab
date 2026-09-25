@@ -1,10 +1,10 @@
-# SOC Home Lab
+# SOC & Cybersecurity Portfolio Lab
 
-A hands-on blue-team cybersecurity portfolio lab focused on security monitoring, Windows authentication analysis, phishing triage, SIEM queries, alert triage and incident investigation.
+A hands-on cybersecurity portfolio focused on security monitoring, Windows authentication analysis, phishing triage, network investigation, SIEM queries, incident response and cyber risk/GRC.
 
 ## Goal
 
-Build practical SOC analyst evidence using synthetic and lab-generated telemetry, then document each investigation clearly enough to explain in a technical interview.
+Build practical, explainable portfolio evidence using synthetic and lab-generated data, with clear documentation that can be discussed in technical interviews.
 
 ## Skills Demonstrated
 
@@ -16,9 +16,13 @@ Build practical SOC analyst evidence using synthetic and lab-generated telemetry
 - Phishing email triage
 - IOC extraction
 - SPF / DKIM / DMARC interpretation
+- Wireshark and network traffic analysis
 - Incident investigation
 - MITRE ATT&CK mapping
 - Containment and remediation planning
+- NIST / ISO 27001-aligned risk assessment
+- Third-party security assurance
+- Privacy / DPIA screening
 - Technical security documentation
 
 ## Completed Investigations
@@ -33,13 +37,6 @@ Investigated a simulated RDP brute-force sequence using synthetic Windows authen
 - Logon Type 10 (RemoteInteractive)
 - MITRE ATT&CK: T1110 Brute Force and T1078 Valid Accounts
 
-**Artifacts**
-- Sentinel KQL detection queries
-- Splunk SPL searches
-- SOC incident report
-- Analysis summary
-- Sample authentication evidence
-
 ➡️ [View the brute-force investigation](./investigations/brute-force/)
 
 ### 2. Phishing Email Investigation ✅
@@ -48,20 +45,10 @@ Investigated a synthetic Microsoft 365 credential-phishing email.
 **Key evidence**
 - Lookalike sender domain
 - From / Reply-To mismatch
-- SPF failure
-- DMARC failure
+- SPF and DMARC failures
 - No DKIM signature
 - Suspicious credential-reset URL
-- Urgency and account-suspension pressure
 - MITRE ATT&CK: T1566.002 and T1056.003
-
-**Artifacts**
-- Phishing indicator table
-- IOC file
-- Sentinel hunting queries
-- Splunk hunting searches
-- Full SOC-style incident report
-- Synthetic email sample
 
 ➡️ [View the phishing investigation](./investigations/phishing-email/)
 
@@ -76,62 +63,80 @@ Investigated synthetic DNS, TCP and HTTP traffic to identify suspicious periodic
 - Wireshark display filters documented
 - MITRE ATT&CK: TA0011 Command and Control and T1071.001 Web Protocols
 
-**Artifacts**
-- Synthetic network traffic evidence
-- Wireshark display filters
-- IOC JSON
-- Analysis summary
-- Full SOC-style incident report
-
 ➡️ [View the network traffic investigation](./investigations/network-traffic/)
+
+## Cyber Risk & GRC Project
+
+### Cloud HR SaaS Risk Assessment ✅
+Assessed a fictional UK organisation's adoption of a cloud HR SaaS platform.
+
+**Coverage**
+- Privileged MFA and access-control gaps
+- Third-party / supplier assurance
+- Cloud configuration risk
+- Vulnerability management
+- Incident response responsibilities
+- Business continuity
+- UK GDPR / DPIA screening
+- NIST CSF and ISO 27001-aligned control concepts
+
+**Artifacts**
+- Risk register
+- Control-gap analysis
+- Supplier security assessment
+- Privacy / DPIA screening
+- Executive summary
+- Residual-risk and remediation ownership
+
+➡️ [View the GRC assessment](./grc/cloud-hr-saas-risk-assessment/)
 
 ## Planned Lab Scenarios
 
 ### Suspicious PowerShell Activity
 Monitor process creation and command-line activity for suspicious PowerShell usage.
 
-### New Process Execution
+### Sysmon Process Investigation
 Analyse Sysmon process-creation events and unusual parent/child relationships.
 
-### Network Investigation
-Review suspicious connections and correlate endpoint and network telemetry.
+### Live SIEM Evidence
+Add screenshots and evidence from a configured SIEM environment to complement the synthetic investigations.
 
 ## Repository Structure
 
 ```text
-soc-home-lab/
+cybersecurity-portfolio/
 ├── README.md
 ├── docs/
 ├── detections/
 ├── queries/
-└── investigations/
-    ├── brute-force/
-    ├── phishing-email/
-    └── network-traffic/
+├── investigations/
+│   ├── brute-force/
+│   ├── phishing-email/
+│   └── network-traffic/
+└── grc/
+    └── cloud-hr-saas-risk-assessment/
 ```
 
 ## Current Status
 
-- [x] Project structure created
-- [x] Brute-force investigation completed
-- [x] Phishing email investigation completed
-- [x] Wireshark network traffic investigation completed
-- [x] Sentinel KQL added
-- [x] Splunk SPL added
-- [x] Incident reports added
-- [x] MITRE ATT&CK mapping added
+- [x] Brute-force investigation
+- [x] Phishing email investigation
+- [x] Wireshark network traffic investigation
+- [x] Microsoft Sentinel KQL
+- [x] Splunk SPL
+- [x] MITRE ATT&CK mapping
+- [x] Cyber Risk & GRC assessment
 - [ ] Windows VM telemetry project
 - [ ] Sysmon investigation
 - [ ] PowerShell investigation
-- [x] Network investigation
 - [ ] Screenshots from a live SIEM lab
 
 ## Portfolio Integrity
 
-The completed investigations currently use **synthetic data**. They demonstrate analysis and detection logic and are not presented as commercial SOC experience.
+The lab investigations and GRC scenario use **synthetic or fictional data**. They demonstrate practical analysis, documentation and security reasoning and are not presented as commercial SOC, penetration-testing or GRC consulting experience.
 
 ## Author
 
 **Kishore Bandi**  
 MSc Cyber Security & Penetration Testing | BTech Computer Science Engineering  
-Target roles: Junior SOC Analyst • Cyber Security Analyst • Security Operations • Junior Security Engineer
+Target roles: Junior SOC Analyst • Cyber Security Analyst • Security Operations • Junior Security Engineer • Vulnerability Management • Cyber Risk / GRC
