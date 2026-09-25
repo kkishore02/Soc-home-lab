@@ -1,6 +1,6 @@
 # SOC Home Lab
 
-A hands-on blue-team cybersecurity portfolio lab focused on security monitoring, Windows authentication analysis, SIEM queries, alert triage and incident investigation.
+A hands-on blue-team cybersecurity portfolio lab focused on security monitoring, Windows authentication analysis, phishing triage, SIEM queries, alert triage and incident investigation.
 
 ## Goal
 
@@ -13,14 +13,17 @@ Build practical SOC analyst evidence using synthetic and lab-generated telemetry
 - Microsoft Sentinel KQL
 - Splunk SPL
 - Alert triage and event correlation
+- Phishing email triage
+- IOC extraction
+- SPF / DKIM / DMARC interpretation
 - Incident investigation
 - MITRE ATT&CK mapping
 - Containment and remediation planning
 - Technical security documentation
 
-## Completed Investigation
+## Completed Investigations
 
-### Brute-Force Login Investigation ✅
+### 1. Brute-Force Login Investigation ✅
 Investigated a simulated RDP brute-force sequence using synthetic Windows authentication logs.
 
 **Key evidence**
@@ -37,7 +40,30 @@ Investigated a simulated RDP brute-force sequence using synthetic Windows authen
 - Analysis summary
 - Sample authentication evidence
 
-➡️ [View the investigation](./investigations/brute-force/)
+➡️ [View the brute-force investigation](./investigations/brute-force/)
+
+### 2. Phishing Email Investigation ✅
+Investigated a synthetic Microsoft 365 credential-phishing email.
+
+**Key evidence**
+- Lookalike sender domain
+- From / Reply-To mismatch
+- SPF failure
+- DMARC failure
+- No DKIM signature
+- Suspicious credential-reset URL
+- Urgency and account-suspension pressure
+- MITRE ATT&CK: T1566.002 and T1056.003
+
+**Artifacts**
+- Phishing indicator table
+- IOC file
+- Sentinel hunting queries
+- Splunk hunting searches
+- Full SOC-style incident report
+- Synthetic email sample
+
+➡️ [View the phishing investigation](./investigations/phishing-email/)
 
 ## Planned Lab Scenarios
 
@@ -59,23 +85,18 @@ soc-home-lab/
 ├── detections/
 ├── queries/
 └── investigations/
-    └── brute-force/
-        ├── README.md
-        ├── incident_report.md
-        ├── sentinel_queries.kql
-        ├── splunk_queries.spl
-        ├── analysis_summary.json
-        ├── sample_authentication_events.csv
-        └── PUBLISH_CHECKLIST.md
+    ├── brute-force/
+    └── phishing-email/
 ```
 
 ## Current Status
 
 - [x] Project structure created
 - [x] Brute-force investigation completed
+- [x] Phishing email investigation completed
 - [x] Sentinel KQL added
 - [x] Splunk SPL added
-- [x] Incident report added
+- [x] Incident reports added
 - [x] MITRE ATT&CK mapping added
 - [ ] Windows VM telemetry project
 - [ ] Sysmon investigation
@@ -85,7 +106,7 @@ soc-home-lab/
 
 ## Portfolio Integrity
 
-The completed brute-force investigation currently uses **synthetic data**. It demonstrates analysis and detection logic and is not presented as commercial SOC experience.
+The completed investigations currently use **synthetic data**. They demonstrate analysis and detection logic and are not presented as commercial SOC experience.
 
 ## Author
 
