@@ -1,0 +1,12 @@
+{
+  "attacker_ip": "185.220.101.45",
+  "failed_logons": 155,
+  "successful_logons_after_failures": 1,
+  "privileged_logon_events_4672": 1,
+  "target_account": "admin",
+  "target_host": "SRV-RDP-01",
+  "attack_start": "2026-09-24T14:18:00",
+  "first_success": "2026-09-24T14:28:32",
+  "privileged_event_time": "2026-09-24T14:28:34",
+  "logon_type": 10
+}
