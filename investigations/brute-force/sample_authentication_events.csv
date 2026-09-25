@@ -1,0 +1,7 @@
+TimeGenerated,EventID,Account,SourceIP,LogonType,Status,Workstation,Details
+2026-09-24T14:18:00,4625,admin,185.220.101.45,10,Failure,SRV-RDP-01,Failed remote interactive authentication
+2026-09-24T14:18:04,4625,admin,185.220.101.45,10,Failure,SRV-RDP-01,Failed remote interactive authentication
+2026-09-24T14:18:08,4625,admin,185.220.101.45,10,Failure,SRV-RDP-01,Failed remote interactive authentication
+2026-09-24T14:28:16,4625,admin,185.220.101.45,10,Failure,SRV-RDP-01,Failed remote interactive authentication
+2026-09-24T14:28:32,4624,admin,185.220.101.45,10,Success,SRV-RDP-01,Successful remote interactive authentication
+2026-09-24T14:28:34,4672,admin,185.220.101.45,10,SpecialPrivilegesAssigned,SRV-RDP-01,Special privileges assigned to new logon
