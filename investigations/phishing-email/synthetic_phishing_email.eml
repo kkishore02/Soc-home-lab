@@ -1,0 +1,24 @@
+From: "Microsoft Security" <security-update@micros0ft-support.example>
+Reply-To: reset-team@account-verification.example
+To: employee@example.org
+Subject: URGENT: Password Expiration - Action Required
+Date: Thu, 24 Sep 2026 10:42:18 +0100
+Message-ID: <20260924104218.7781@micros0ft-support.example>
+Received: from mail.micros0ft-support.example (203.0.113.77)
+        by mx.example.org with ESMTPS id LAB-2026-001;
+        Thu, 24 Sep 2026 10:42:20 +0100
+Authentication-Results: mx.example.org;
+        spf=fail smtp.mailfrom=micros0ft-support.example;
+        dkim=none;
+        dmarc=fail header.from=micros0ft-support.example
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+
+Your Microsoft 365 password expires today.
+
+To avoid losing access, confirm your account immediately:
+https://login-microsoft365-security.example/reset
+
+Failure to complete verification within 30 minutes will suspend your mailbox.
+
+Microsoft Security Team
