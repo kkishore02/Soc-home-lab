@@ -1,0 +1,8 @@
+{
+  "source_host": "10.10.20.15",
+  "suspicious_domain": "update-check.example",
+  "suspicious_ip": "203.0.113.77",
+  "destination_port": 80,
+  "uri": "/checkin?id=wkstn15",
+  "evidence_type": "synthetic"
+}
