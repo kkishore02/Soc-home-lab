@@ -1,0 +1,28 @@
+# Wireshark Display Filters
+
+# Traffic involving the suspected workstation
+ip.addr == 10.10.20.15
+
+# DNS queries from the workstation
+dns && ip.src == 10.10.20.15
+
+# Traffic to the suspicious external IP
+ip.addr == 203.0.113.77
+
+# HTTP requests to the suspicious host
+http.request && ip.dst == 203.0.113.77
+
+# TCP traffic to destination port 80
+tcp.dstport == 80 && ip.src == 10.10.20.15
+
+# Show HTTP GET requests
+http.request.method == "GET"
+
+# Show DNS queries containing the suspicious domain
+dns.qry.name contains "update-check.example"
+
+# Focus on conversations between the workstation and external IP
+ip.src == 10.10.20.15 && ip.dst == 203.0.113.77
+
+# Review TCP resets or retransmissions if present
+tcp.analysis.retransmission || tcp.flags.reset == 1
