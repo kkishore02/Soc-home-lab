@@ -2,6 +2,17 @@
 
 A hands-on cybersecurity portfolio focused on security monitoring, Windows authentication analysis, phishing triage, network investigation, SIEM queries, incident response and cyber risk/GRC.
 
+## Portfolio Highlights
+
+| Project | Focus | Tools / Skills | Status |
+|---|---|---|---|
+| Brute-Force Login Investigation | Authentication attack triage | Windows Events, Sentinel KQL, Splunk SPL, MITRE ATT&CK | ✅ Complete |
+| Phishing Email Investigation | Email security / IOC analysis | SPF, DKIM, DMARC, Sentinel, Splunk, MITRE ATT&CK | ✅ Complete |
+| Wireshark Network Investigation | DNS / TCP / HTTP analysis | Wireshark filters, IOC extraction, traffic correlation | ✅ Complete |
+| Cloud HR SaaS Risk Assessment | Cyber Risk / GRC | Risk register, ISO 27001 concepts, NIST CSF, DPIA, supplier assurance | ✅ Complete |
+
+**Recruiter quick view:** This portfolio demonstrates hands-on blue-team analysis, SIEM query writing, incident reporting, network investigation and cyber-risk documentation using clearly labelled synthetic or fictional scenarios.
+
 ## Goal
 
 Build practical, explainable portfolio evidence using synthetic and lab-generated data, with clear documentation that can be discussed in technical interviews.
