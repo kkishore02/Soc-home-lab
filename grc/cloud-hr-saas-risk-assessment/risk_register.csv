@@ -1,0 +1,7 @@
+risk_id,risk,asset_or_process,likelihood,impact,inherent_risk,recommended_control,owner,target_residual_risk
+R1,Privileged accounts without MFA,HR SaaS admin access,High,High,Critical,Enforce MFA and conditional access,IT Security,Medium
+R2,Overly broad user permissions,Employee HR records,Medium,High,High,Implement RBAC and quarterly access reviews,HR/IT,Low
+R3,Insufficient supplier assurance,Third-party SaaS provider,Medium,High,High,Complete security due diligence and contract controls,Procurement/Security,Medium
+R4,Cloud misconfiguration,HR SaaS tenant,Medium,High,High,Apply secure configuration baseline and periodic review,Cloud/Security,Low
+R5,Weak incident coordination,Security incident response,Medium,High,High,Define supplier/customer IR responsibilities and test plan,Security/Legal,Medium
+R6,Supplier outage dependency,Business continuity,Medium,Medium,Medium,Document BCP/RTO/RPO and export/recovery process,IT/Business,Low
