@@ -1,0 +1,13 @@
+{
+  "investigation": "Wireshark network traffic investigation",
+  "classification": "Suspicious - requires endpoint correlation",
+  "source_host": "10.10.20.15",
+  "destination": "203.0.113.77",
+  "domain": "update-check.example",
+  "observed_pattern": "Repeated HTTP check-ins at approximately 60-second intervals",
+  "mitre_attack": [
+    "TA0011",
+    "T1071.001"
+  ],
+  "data_integrity": "Synthetic portfolio evidence"
+}
