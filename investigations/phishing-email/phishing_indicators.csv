@@ -1,0 +1,9 @@
+Indicator,Evidence,Severity
+Display-name impersonation,Sender uses the display name 'Microsoft Security' while the domain is not a legitimate Microsoft domain.,High
+Lookalike domain,The sender domain uses 'micros0ft' with a zero in place of the letter 'o'.,High
+Reply-To mismatch,Reply-To domain differs from the From domain.,Medium
+SPF failure,Authentication-Results shows spf=fail.,High
+DMARC failure,Authentication-Results shows dmarc=fail.,High
+No DKIM,Authentication-Results shows dkim=none.,Medium
+Urgency / pressure,Subject and body pressure the user to act immediately within 30 minutes.,Medium
+Credential-harvest link,Link text points to a non-Microsoft domain imitating a Microsoft 365 login page.,High
