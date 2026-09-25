@@ -1,0 +1,28 @@
+// Microsoft Sentinel / Log Analytics examples
+
+// 1) Repeated failed logons
+SecurityEvent
+| where EventID == 4625
+| summarize FailedAttempts=count(), FirstSeen=min(TimeGenerated), LastSeen=max(TimeGenerated)
+  by IpAddress, TargetAccount, Computer
+| where FailedAttempts >= 10
+| order by FailedAttempts desc
+
+// 2) Failure burst followed by success
+let failures =
+SecurityEvent
+| where EventID == 4625
+| summarize FailedAttempts=count(), LastFailure=max(TimeGenerated)
+  by IpAddress, TargetAccount;
+SecurityEvent
+| where EventID == 4624
+| project SuccessTime=TimeGenerated, IpAddress, TargetAccount, Computer, LogonType
+| join kind=inner failures on IpAddress, TargetAccount
+| where FailedAttempts >= 10
+| where SuccessTime between (LastFailure .. LastFailure + 30m)
+| project IpAddress, TargetAccount, FailedAttempts, LastFailure, SuccessTime, Computer, LogonType
+
+// 3) Privileged logon after suspicious authentication
+SecurityEvent
+| where EventID == 4672
+| project TimeGenerated, TargetAccount, Computer, SubjectLogonId
