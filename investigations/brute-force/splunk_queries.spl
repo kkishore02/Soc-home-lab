@@ -1,0 +1,15 @@
+# 1) Repeated failed logons
+index=windows (EventCode=4625 OR EventID=4625)
+| stats count AS failed_attempts earliest(_time) AS first_seen latest(_time) AS last_seen BY src_ip user host
+| where failed_attempts >= 10
+| sort - failed_attempts
+
+# 2) Success after repeated failures
+index=windows (EventCode=4624 OR EventCode=4625 OR EventID=4624 OR EventID=4625)
+| eval outcome=if(EventCode=4624 OR EventID=4624,"success","failure")
+| stats count(eval(outcome="failure")) AS failures count(eval(outcome="success")) AS successes BY src_ip user host
+| where failures >= 10 AND successes > 0
+
+# 3) Privileged logon event
+index=windows (EventCode=4672 OR EventID=4672)
+| table _time user host src_ip
