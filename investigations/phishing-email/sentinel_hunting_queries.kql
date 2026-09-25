@@ -1,0 +1,14 @@
+// Microsoft Sentinel / Defender-style hunting examples
+
+EmailEvents
+| where SenderFromDomain =~ "micros0ft-support.example"
+| project Timestamp, SenderFromAddress, SenderFromDomain, RecipientEmailAddress, Subject, DeliveryAction
+
+UrlClickEvents
+| where Url has "login-microsoft365-security.example"
+| project Timestamp, AccountUpn, Url, ActionType
+
+EmailEvents
+| where Subject has_any ("Password Expiration", "Action Required")
+| where SenderFromDomain !endswith "microsoft.com"
+| project Timestamp, SenderFromAddress, SenderFromDomain, RecipientEmailAddress, Subject
